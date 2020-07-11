@@ -1,0 +1,13 @@
+---
+- name: cau hinh router
+  host: all
+  gather_facts: no
+  task:
+    - name: show ip
+      ios_command:
+        command:
+          - show ip int brief
+      register: output
+      
+     - debug: var=output.stout
+ 
